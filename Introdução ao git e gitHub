@@ -1,3 +1,132 @@
+Anotações sobre o Bootcamp MRV.
+
+Tópicos sobre Git e GitHub.
+
+Para aumentar a letra iremos colocando # 
+## Título nível 1
+### Título nível 1 
+##### Título nível 1 – em html seria <h5> Título nível 1<h5>
+Obs: para criar um arquivo markdown iremos utilizar qq editor de texto e salvar com a extensão .md
+Após isso iremos criar um arquivo com extensão.md
+Ex:  strogonoff.md
+Iremos adicionar no git 
+Comandos: git add *
+Git commit –m “commit inicial” + enter
+Tem que retornar dessa forma, informando que foi mudado 1 arquivo, 28 inserção, create, com a nossa SSH que é o f89e707 chave inicial, etc. 
+git commit -m "commit inicial"
+[master (root-commit) f89e707] commit inicial
+ 1 file changed, 28 insertions(+)
+ create mode 100644 strogonoff.txt
+
+
+GIT INIT – além de criar aquela pasta .git, de fato estamos criando um repositório. 
+
+
+Vamos falar de Tracket e untracket 
+
+Arquivo Untracked – o git não tem conhecimento ainda do arquivo, sendo assim, temos que rodar o comando git add *
+
+Umodified – não sofreu modificação
+Modified – sofreu alteração, por que quando mudamos ele muda o sha1
+Staged – se rodarmos o git add* em um arquivo que já foi modificado ( modified) ele vai para staged ( ele está aguardando para entra em ação, esperando para fazer parte do commit, ou seja, está em backstage e nos envelopes os arquivos, essas mensagens carregam uma data, autor aí eles mudam de staged para commit, depois de pronto ele volta para o estágio umodified, se torna um ciclo.
+
+Seu repositório local tem que estar commitado ( com comiit )só assim podemos enviar para o nosso repositório remoto ( ex: github)
+. COMANDO GIT STATUS – para sabermos qual status está lemrabdo que Seu repositório local tem que estar commitado ( com comiit )só assim podemos enviar para o nosso repositório remoto ( ex: github)
+Ou seja, tem que gerar essa mensagem 
+
+git status
+On branch master
+nothing to commit, working tree clean
+
+
+. agora iremos criar uma nova pasta chamada receitas e iremos colocar a pasta strgonoff – para isso iremos usar o comando primeiro 
+Mkdir receitas ( para criar uma pasta chamada receitas )
+Após iremos mover com comando “ mv strogonoff.txt ./” ou seja, movemos essa pasta para dentro da pasta receitas,damos um comando ls para listar para confirmar a informação. 
+Iremos rodar um comando git status 
+Irá informar que o arquivo foi deletado o strogonoff, e para usar o git add/rm < file> 
+git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    strogonoff.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        receitas/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aí iremos add os arquivos para o git 
+git add + nome do arquivo 
+no caso concreto : git add strogonoff.txt 
+git add receitas
+depois damos um git status para confirmar 
+git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    strogonoff.txt -> receitas/strogonoff.txt
+
+pronto ele já está dizendo que o arquivo está faltando ser commitado
+comando para comitar : git commit -m "Cria pasta receitas, move arquivo para receitas"
+
+
+[master 6610908] Cria pasta receitas, move arquivo para receitas
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename strogonoff.txt => receitas/strogonoff.txt (100%)
+
+
+obs: para mudar o status podemos usar o comando git restore –stage + nome do arquivo
+
+para verificar todas as configurações do git 
+
+git 
+
+para incluir um repositório no github pelo git bash, iremos usar o comando 
+git remote add origin git@github.com:Gabriel-Newton-dev/livro-receitas.git
+
+git remote add origin + o link que temos dentro do Github 
+
+para verificar se os repositórios foram atualizados iremos dar o comando 
+git remote –v
+que tem que retornar dessa forma pra gt 
+origin  git@github.com:Gabriel-Newton-dev/livro-receitas.git (fetch)
+origin  git@github.com:Gabriel-Newton-dev/livro-receitas.git (push)
+
+
+
+
+
+GITHUB
+para incluir um repositório no github pelo git bash, iremos usar o comando 
+git remote add origin git@github.com:Gabriel-Newton-dev/livro-receitas.git
+
+git remote add origin + o link que temos dentro do Github 
+
+para verificar se os repositórios foram atualizados iremos dar o comando 
+git remote –v
+que tem que retornar dessa forma pra gt 
+origin  git@github.com:Gabriel-Newton-dev/livro-receitas.git (fetch)
+origin  git@github.com:Gabriel-Newton-dev/livro-receitas.git (push)
+
+após isso iremos empurrar ( comando push ) para o github
+
+comando: git push origin máster 
+ele irá pedir a autenticação -  no caso a senha do git e só dar enter 
+tem que retornar para gt dessa forma 
+git push origin master
+Enter passphrase for key '/c/Users/Dell/.ssh/id_ed25519':
+Enter passphrase for key '/c/Users/Dell/.ssh/id_ed25519':
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 1.15 KiB | 295.00 KiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Gabriel-Newton-dev/livro-receitas.git
+ * [new branch]      master -> master
+
 RESOLVENDO CONFLITOS 
 
 Quando fizer qq modificação no arquivo
@@ -13,3 +142,9 @@ Git push origin máster ( origin foi o nome que demos ao nosso repositório )
 
 Para clonar um repositório do git hub 
 Iremos clicar no ícone verde ( code ) 
+Copiar o link git@github.com:Gabriel-Newton-dev/Aulas_Python_1_de_11.git
+
+E depois dar o comando 
+Git clone + repositório
+Git clone git@github.com:Gabriel-Newton-dev/Aulas_Python_1_de_11.git
+
