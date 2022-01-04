@@ -1,0 +1,15 @@
+RESOLVENDO CONFLITOS 
+
+Quando fizer qq modificação no arquivo
+
+Devemos primeiro dar um comando 
+Git pull – puxar o que está lá para a nossa máquina para depois modificarmos
+Modificamos o que desejamos, salvamos 
+Iremos ano gitbash dar o comando : 
+Git status -  ele vai informar que teve modificação para incluir iremos dar o comando Git add * ( para add todas as alterações ) 
+Iremos dar um nome ao commit 
+Git commit –m “resolve conflitos” enter
+Git push origin máster ( origin foi o nome que demos ao nosso repositório ) 
+
+Para clonar um repositório do git hub 
+Iremos clicar no ícone verde ( code ) 
